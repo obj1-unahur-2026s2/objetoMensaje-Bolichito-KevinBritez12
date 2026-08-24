@@ -14,7 +14,6 @@ object remera {
     }
 }
 
-
 object pelota {
     method peso() = 1300
     
@@ -29,6 +28,7 @@ object pelota {
         return self.material().esBrillante()
     }
 }
+
 object munieco {
     var peso = 10
     method peso() {
@@ -131,4 +131,59 @@ object cobre {
     method material() {return true}
     method esBrillante() {return true}
 }
- 
+
+object arito {
+    method peso() = 180
+    
+    method color() = celeste
+
+    method material() = cobre
+
+    method esDeColorFuerte() {
+        return self.color().esDeColorFuerte()
+    }
+    method esDeMaterialQueBrilla () {
+        return self.material().esBrillante()
+    }
+
+}
+object banquito {
+    var color = naranja
+    method peso() = 1700
+
+    method material() = madera
+
+    method color() {return color}
+
+    method cambiarColor(nuevoColor) {color = nuevoColor}
+
+    method esDeColorFuerte() {
+        return self.color().esDeColorFuerte()
+    }
+    method esDeMaterialQueBrilla () {
+        return self.material().esBrillante()
+    }
+}
+object naranja {
+    method color() {return true}
+    method esDeColorFuerte() {return true}
+}
+object cajita {
+    var objetoGuardado = remera
+    
+    method peso() = 400 + objetoGuardado.peso()
+
+    method color() = rojo
+
+    method material() = cobre
+
+    method esDeColorFuerte() {
+        return self.color().esDeColorFuerte()
+    }
+    method esDeMaterialQueBrilla () {
+        return self.material().esBrillante()
+    }
+    method objetoGuardardo() {return objetoGuardado}
+    
+    method guardarAdentro(unaCosa) {objetoGuardado = unaCosa}
+}

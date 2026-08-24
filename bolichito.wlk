@@ -1,25 +1,40 @@
 import cosas.*
+import personas.*
 
 object bolichito {
-    var cosaEnMostrador = remera
+    var objetoEnMostrador = remera
     
-    var cosaEnVidriera = munieco
+    var objetoEnVidriera = munieco
     
     method esBrillante(){
-        return self.cosaEnMosrtador()
-               //cosaEnMostrador.esBrillante()&& cosaEnVidriera.esBrillante()
+        return self.objetoEnMostrador().esDeMaterialQueBrilla() && self.objetoEnVidriera().esDeMaterialQueBrilla()
     }
-    method cosaEnMostrador(){
-        return cosaEnMostrador
+    method objetoEnMostrador(){
+        return objetoEnMostrador
     }
-    method esMonocromatico() {
-        cosaEnMostrador.color() == cosaEnVidriera.color()
+    method ponerEnMostrador(nuevoObjetoEnMostrador) {
+        objetoEnMostrador = nuevoObjetoEnMostrador
+        }
+    method objetoEnVidriera(){
+        return objetoEnVidriera
+    }
+    method ponerEnVidriera(nuevoObjetoEnVidriera) {
+        objetoEnVidriera = nuevoObjetoEnVidriera
+    }
+    method esMonocromatico() {return
+        objetoEnMostrador.color() == objetoEnVidriera.color()
     }
     method estaEquilibrado() {
-        return cosaEnMostrador.peso() > cosaEnVidriera.peso()
+        return objetoEnMostrador.peso() > objetoEnVidriera.peso()
     }
     method puedeMejorar() {
         return not self.estaEquilibrado() || self.esMonocromatico()
 
+    }
+    method tieneAlgoExhibidoDe(unColor) {
+    return objetoEnMostrador.color() == unColor || objetoEnVidriera.color() == unColor
+    }
+    method puedeOfrecerleAlgoA (unaPersona) {
+        return unaPersona.leGusta(objetoEnMostrador) || unaPersona.leGusta(objetoEnVidriera)
     }
 }
