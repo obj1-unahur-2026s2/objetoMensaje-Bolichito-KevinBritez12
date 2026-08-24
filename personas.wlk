@@ -18,3 +18,8 @@ object juan {
         unaCosa.peso().between(1200, 1800)
     }
 }
+object luisa {
+    method leGusta(unaCosa) {
+        return unaCosa.esDeMaterialQueBrilla()
+    }
+}

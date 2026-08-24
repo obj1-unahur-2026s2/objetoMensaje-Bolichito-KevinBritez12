@@ -16,7 +16,7 @@ object bolichito {
         cosaEnMostrador.color() == cosaEnVidriera.color()
     }
     method estaEquilibrado() {
-        retrun cosaEnMostrador.peso() > cosaEnVidriera.peso()
+        return cosaEnMostrador.peso() > cosaEnVidriera.peso()
     }
     method puedeMejorar() {
         return not self.estaEquilibrado() || self.esMonocromatico()
